@@ -1,103 +1,201 @@
+"use client";
+
 import Image from "next/image";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
+import { Footer } from "@/components/Footer";
+import { Chooseus } from "@/components/Chooseus";
+import { Card, CardContent } from "@/components/ui/card";
+import { SessionProvider } from "next-auth/react"
+import PageComponent from "@/components/PageComponent";
+
+
+// ✅ Declare testimonials here (outside any component)
+const testimonials = [
+  {
+    quote:
+      "I enrolled in the Cybersecurity Fundamentals course and it was exactly what I needed to kickstart my career in this field. The instructors were knowledgeable and supportive.",
+    name: "John Doe",
+    title: "Cybersecurity Analyst Student",
+  },
+  {
+    quote:
+      "As someone with no prior experience in cybersecurity, this course provided me with a solid foundation. The hands-on labs were particularly helpful in reinforcing the concepts.",
+    name: "Jane Smith",
+    title: "Career Transition Student",
+  },
+  {
+    quote:
+      "The advanced course helped me prepare for industry certifications. The curriculum is well-structured and covers all the essential topics in depth.",
+    name: "Mike Johnson",
+    title: "Security Operations Specialist",
+  },
+  {
+    quote:
+      "From beginner to advanced, the structure and support of these courses are unmatched. Highly recommend for anyone serious about cyber security.",
+    name: "Sarah Kim",
+    title: "Network Security Engineer",
+  },
+  {
+    quote:
+      "Loved the animations, clarity, and industry relevance. It felt like getting real-world training in a very engaging format.",
+    name: "Akash Mehta",
+    title: "Ethical Hacking Intern",
+  },
+];
+const services = [
+  {
+    title: "MCRTA",
+    label: null,
+    logo: "/logo1.png",
+    image: "/bg1.jpg",
+  },
+  {
+    title: "CRTS V2",
+    label: null,
+    logo: "/logo2.png",
+    image: "/bg2.jpeg",
+  },
+  {
+    title: "CRTA",
+    label: null,
+    logo: "/logo3.png",
+    image: "/bg3.jpeg",
+  },
+  {
+    title: "RED TEAM OPS I",
+    label: null,
+    logo: "/logo4.png",
+    image: "/bg4.jpeg",
+  },
+];
 
 export default function Home() {
+  
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <main>
+      {/* HERO SECTION */}
+      <section className="min-h-screen text-white flex items-center px-8 py-8 gap-10">
+        <div className="max-w-7xl w-full grid md:grid-cols-2 gap-8 ">
+          {/* Left Text Content */}
+          <div className="text-left pt-20 mx-10">
+            <h1 className="text-9xl font-extrabold mb-4">
+              <span className="text-red-600">H</span>ACTIFIED
+            </h1>
+            <p className="text-gray-300 text-4xl mb-6 pt-5">
+              Gear up with
+              <br />
+              cutting-edge courses for <br />
+              cyber warriors of tomorrow.
+            </p>
+            <div className="flex space-x-4 pt-9">
+              <Link href="/services">
+                <Button className="bg-white text-black text-xl hover:bg-gray-200">
+                  Explore Services
+                </Button>
+              </Link>
+              <div>
+                <SessionProvider>
+                    <PageComponent />
+                </SessionProvider>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+              </div>
+            </div>
+          </div>
+
+          {/* Right Image */}
+          <div className="relative w-120 h-120 md:h-[600px] opacity-75 mx-60">
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              src="/hero-hacker-modified.png"
+              alt="Hacker illustration"
+              fill
+              className="object-contain"
+              priority
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </section>
+      {/* WHY TO CHOOSE US SECTION */}
+
+      <div>
+        <h2 className="text-6xl font-bold text-white mb-3 mx-16">
+          <span className="text-red-600">W</span>HY TO CHOOSE US
+        </h2>
+        <Chooseus />
+
+      </div>
+
+      {/* EXPLORE SERVICES SECTION */}
+      <div className="pt-20">
+        <h2 className="text-6xl font-bold text-white mb-3 mx-16">
+          <span className="text-red-600">E</span>XPLORE OUR SERVICES
+        </h2>
+        <div className="flex flex-wrap gap-4 justify-center pt-20 pb-10">
+          {services.map((service, index) => (
+            <Card
+              key={index}
+              className="w-[300px] h-[200px] rounded-xl relative overflow-hidden text-white shadow-lg"
+              style={{
+                backgroundImage: `url(${service.image})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            >
+              <CardContent className="absolute inset-0 bg-black/50 flex flex-row items-left justify-start text-center px-4">
+                {/* Optional badge at top-left if label exists */}
+                {service.label && (
+                  <div className="absolute top-3 left-3 bg-yellow-400 text-black text-xs px-2 py-1 rounded">
+                    {service.label}
+                  </div>
+                )}
+
+                {/* Logo image */}
+                {service.logo && (
+                  <Image
+                    src={service.logo}
+                    alt={`${service.title} logo`}
+                    width={130}
+                    height={130}
+                    className="mt-8 mb-8 hover:h-30 hover:w-30 flex justify-end items-center"
+                  />
+                )}
+
+                {/* Title in center */}
+                <h3 className="text-2xl font-semibold flex justify-end item-center mx-6 mt-20">{service.title}</h3>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+        <div className="flex justify-end pr-8">
+          <Link href="/services">
+            <Button
+              variant="outline"
+              className=" bg-red-600 text-white text-2xl hover:bg-white hover:text-red-600"
+            >
+              show more →
+            </Button>
+          </Link>
+        </div>
+      </div>
+
+      {/* TESTIMONIALS SECTION */}
+      <section className="container px-4 py-16 mx-auto pt-30" id="testimonials">
+        <h2 className="text-6xl font-bold text-white mb-8 mx-16">
+          <span className="text-red-600">T</span>ESTIMONIALS
+        </h2>
+
+        <InfiniteMovingCards
+          items={testimonials}
+          direction="left"
+          speed="normal"
+          pauseOnHover={true}
+          className="dark:bg-black pt-10"
+        />
+      </section>
+
+      {/*FOOTER SECTION */}
+      <Footer />
+    </main>
   );
 }

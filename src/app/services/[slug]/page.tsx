@@ -1,18 +1,17 @@
-'use client';
 import { notFound } from "next/navigation";
 import { services } from "@/data/services";
 import { Button } from "@/components/ui/button";
 import React from "react";
+import Image from "next/image";
 
 type Props = {
-    params: {
+    params: Promise<{
         slug: string;
-    };
+    }>;
 };
 
-export default function ServiceDetail(props: Props) {
-    const updatedProps = React.use(props);
-    const { slug } = props.params;
+export default async function ServiceDetail(props: Props) {
+    const { slug } = await props.params;
     const service = services.find((s) => s.slug === slug);
 
     if (!service) return notFound();
@@ -21,10 +20,12 @@ export default function ServiceDetail(props: Props) {
         <div className="text-white pt-12">
             <h1 className="text-4xl font-bold p-5 ">{service.title}</h1>
             <div className="flex flex-row p-10 pl-20 pr-10">
-                <img
+                <Image
                     src={service.image}
                     alt={`${service.title} image`}
                     className="rounded-lg mb-6 h-120 w-150 pt-5 flex justify-start"
+                    width={150}
+                    height={120}
                 />
                 <div className="pt-5 pl-15 max-w-2xl">
                     <p>Details about {service.title} go here...</p>

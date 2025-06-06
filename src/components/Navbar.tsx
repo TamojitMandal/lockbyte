@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import {SessionProvider} from "next-auth/react"
+import { SessionProvider } from "next-auth/react"
 import UserButton from "./UserButton"
 
 
@@ -12,8 +12,11 @@ export default function Navbar() {
   return (
     <nav className="fixed w-full bg-black border-b border-gray-800 z-50">
       <div className="container flex items-center justify-between h-16 px-4 mx-auto">
-        <Link href="/" className="text-xl font-bold text-white hover:text-red-600">
-          <span className="text-red-600 hover:text-white">H</span>ACTIFIED
+        <Link href="/" className="text-xl font-bold hover:cursor-pointer group inline-block">
+          <span className="text-red-600 group-hover:text-white transition">L</span>
+          <span className="text-white group-hover:text-red-600 transition">OCK</span>
+          <span className="text-red-600 group-hover:text-white transition">B</span>
+          <span className="text-white group-hover:text-red-600 transition">YTE</span>
         </Link>
         <nav className="hidden md:flex items-center space-x-6">
           <Link href="/" className={`text-sm ${pathname === "/" ? "text-red-600" : "text-white hover:text-red-600"}`}>
@@ -39,7 +42,7 @@ export default function Navbar() {
           </Link>
         </nav>
         <div className="flex items-center space-x-2">
-          
+
           <div>
             <SessionProvider>
               <UserButton />

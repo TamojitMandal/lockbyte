@@ -72,7 +72,7 @@ const services = [
 ];
 
 export default function Home() {
-  
+
   return (
     <main>
       {/* HERO SECTION */}
@@ -81,7 +81,8 @@ export default function Home() {
           {/* Left Text Content */}
           <div className="text-left pt-20 mx-10">
             <h1 className="text-9xl font-extrabold mb-4">
-              <span className="text-red-600">H</span>ACTIFIED
+              <span className="text-red-600">L</span>OCK
+              <span className="text-red-600">B</span>YTE
             </h1>
             <p className="text-gray-300 text-4xl mb-6 pt-5">
               Gear up with
@@ -97,7 +98,7 @@ export default function Home() {
               </Link>
               <div>
                 <SessionProvider>
-                    <PageComponent />
+                  <PageComponent />
                 </SessionProvider>
 
               </div>

@@ -9,18 +9,18 @@ export const Chooseus = () => {
             src: "/choose_us1.jpeg",
         },
         {
-            title: "Industry-Relevant Curriculum ",
-            src: "/choose_us1.jpeg",
+            title: "No matter your place on the planet, we’re here for you. ",
+            src: "/choose_us2.jpeg",
         },
         {
-            title: "Industry-Relevant Curriculum ",
+            title: "Boundless Partnerships, Limitless Possibilities. ",
          
-            src: "/choose_us1.jpeg",
+            src: "/choose_us3.jpeg",
         },
         {
-            title: "Industry-Relevant Curriculum ",
+            title: "Ready whenever you are — just one click away!",
         
-            src: "/choose_us1.jpeg",
+            src: "/choose_us4.jpeg",
         },
     ];
     return (

@@ -13,7 +13,7 @@ export default function AboutUsSection() {
                     <div className="bg-[#1c1c1c] p-6 rounded-xl w-130 h-100">
                         <h3 className="text-center text-2xl font-semibold mb-2">Our Website</h3>
                         <p className="text-xl text-gray-300 pt-5 text-left w-90 gap-4 pl-7">
-                            Hactified is a next-gen platform empowering learners with
+                            Lockbyte is a next-gen platform empowering learners with
                             cutting-edge cybersecurity and tech courses, crafted by experts to
                             build real-world skills for tomorrow’s digital defenders and ethical
                             hackers.

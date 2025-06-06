@@ -8,6 +8,8 @@ import { submitContactForm } from "@/app/server/contact"
 import { useFormStatus } from "react-dom"
 import { AlertCircle, CheckCircle } from "lucide-react"
 import { useToast } from "@/hooks/use-toast"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faXTwitter, faTelegramPlane, faDiscord } from "@fortawesome/free-brands-svg-icons";
 
 // Submit button with loading state
 function SubmitButton() {
@@ -90,21 +92,21 @@ export default function Contact() {
               <div className="mb-6">
                 <h3 className="text-lg text-white font-semibold mb-1">Email</h3>
                 <p className="text-gray-400">We&apos;ll respond as soon as possible</p>
-                <p className="text-gray-300">Hactified@gmail.com</p>
+                <p className="text-gray-300">lockbyte@gmail.com</p>
               </div>
 
               {/* Social Icons */}
               <div className="mt-6">
                 <h3 className="text-lg text-white font-semibold mb-3">Socials</h3>
                 <div className="flex space-x-4">
-                  <a href="#" className="w-8 h-8 flex items-center justify-center rounded-full border border-gray-700 hover:bg-gray-800 transition">
-                    <i className="fab fa-x-twitter text-white"></i>
+                  <a href="https://twitter.com/your_handle" target="_blank" rel="noopener noreferrer">
+                    <FontAwesomeIcon icon={faXTwitter} className="text-white w-6 h-6" />
                   </a>
-                  <a href="#" className="w-8 h-8 flex items-center justify-center rounded-full border border-gray-700 hover:bg-gray-800 transition">
-                    <i className="fab fa-facebook-f text-white"></i>
+                  <a href="https://t.me/your_channel" target="_blank" rel="noopener noreferrer">
+                    <FontAwesomeIcon icon={faTelegramPlane} className="text-white w-6 h-6" />
                   </a>
-                  <a href="#" className="w-8 h-8 flex items-center justify-center rounded-full border border-gray-700 hover:bg-gray-800 transition">
-                    <i className="fab fa-instagram text-white"></i>
+                  <a href="https://discord.gg/your_invite_code" target="_blank" rel="noopener noreferrer">
+                    <FontAwesomeIcon icon={faDiscord} className="text-white w-6 h-6" />
                   </a>
                 </div>
               </div>
@@ -113,7 +115,7 @@ export default function Contact() {
 
           {/* Footer */}
           <div className="mt-2 text-left mx-8 text-sm text-gray-500">
-            © Created by TEAM HACTIFIED
+            © Created by TEAM LOCKBYTE
           </div>
         </div>
 
@@ -126,9 +128,8 @@ export default function Contact() {
 
           {formState.submitted && (
             <div
-              className={`mb-6 p-4 rounded-lg flex items-start gap-3 ${
-                formState.success ? "bg-green-900/20 text-green-400" : "bg-red-900/20 text-red-400"
-              }`}
+              className={`mb-6 p-4 rounded-lg flex items-start gap-3 ${formState.success ? "bg-green-900/20 text-green-400" : "bg-red-900/20 text-red-400"
+                }`}
             >
               {formState.success ? (
                 <CheckCircle className="h-5 w-5 mt-0.5 flex-shrink-0" />

@@ -134,38 +134,41 @@ export default function Home() {
         </h2>
         <div className="flex flex-wrap gap-4 justify-center pt-20 pb-10">
           {services.map((service, index) => (
-            <Card
-              key={index}
-              className="w-[300px] h-[200px] rounded-xl relative overflow-hidden text-white shadow-lg"
-              style={{
-                backgroundImage: `url(${service.image})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
-            >
-              <CardContent className="absolute inset-0 bg-black/50 flex flex-row items-left justify-start text-center px-4">
-                {/* Optional badge at top-left if label exists */}
-                {service.label && (
-                  <div className="absolute top-3 left-3 bg-yellow-400 text-black text-xs px-2 py-1 rounded">
-                    {service.label}
-                  </div>
-                )}
+            <Link href={"/services"}>
+              <Card
+                key={index}
+                className="w-[300px] h-[200px] rounded-xl relative overflow-hidden text-white shadow-lg"
+                style={{
+                  backgroundImage: `url(${service.image})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
+              >
+                <CardContent className="absolute inset-0 bg-black/50 flex flex-row items-left justify-start text-center px-4">
+                  {/* Optional badge at top-left if label exists */}
+                  {service.label && (
+                    <div className="absolute top-3 left-3 bg-yellow-400 text-black text-xs px-2 py-1 rounded">
+                      {service.label}
+                    </div>
+                  )}
 
-                {/* Logo image */}
-                {service.logo && (
-                  <Image
-                    src={service.logo}
-                    alt={`${service.title} logo`}
-                    width={130}
-                    height={130}
-                    className="mt-8 mb-8 hover:h-30 hover:w-30 flex justify-end items-center"
-                  />
-                )}
+                  {/* Logo image */}
+                  {service.logo && (
+                    <Image
+                      src={service.logo}
+                      alt={`${service.title} logo`}
+                      width={130}
+                      height={130}
+                      className="mt-8 mb-8 hover:h-30 hover:w-30 flex justify-end items-center"
+                    />
+                  )}
 
-                {/* Title in center */}
-                <h3 className="text-2xl font-semibold flex justify-end item-center mx-6 mt-20">{service.title}</h3>
-              </CardContent>
-            </Card>
+                  {/* Title in center */}
+                  <h3 className="text-2xl font-semibold flex justify-end item-center mx-6 mt-20">{service.title}</h3>
+                </CardContent>
+              </Card>
+            </Link>
+
           ))}
         </div>
         <div className="flex justify-end pr-8">

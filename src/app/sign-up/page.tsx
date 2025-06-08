@@ -5,9 +5,9 @@
 import { Button } from "@/components/ui/button";
 import {
   Card,
-  CardHeader,
-  CardDescription,
   CardContent,
+  CardDescription,
+  CardHeader,
   CardTitle,
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -17,11 +17,10 @@ import Link from "next/link";
 
 //react icons
 
+import { TriangleAlert } from "lucide-react";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { toast } from "sonner";
-import { useRouter } from "next/navigation";
-import { TriangleAlert } from "lucide-react";
-import { signIn } from "next-auth/react";
 
 const SignUp = () => {
   const [form, setForm] = useState({

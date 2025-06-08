@@ -134,7 +134,7 @@ export default function Home() {
         </h2>
         <div className="flex flex-wrap gap-4 justify-center pt-20 pb-10">
           {services.map((service, index) => (
-            <Link href={"/services"}>
+            <Link href={"/services"} key={service.title}>
               <Card
                 key={index}
                 className="w-[300px] h-[200px] rounded-xl relative overflow-hidden text-white shadow-lg"

@@ -58,19 +58,13 @@ const SignUp = () => {
     }
   };
 
-  const handleProvider = (
-    event: React.MouseEvent<HTMLButtonElement>,
-    value: "github" | "google"
-  ) => {
-    event.preventDefault();
-    signIn(value, { callbackUrl: "/" });
-  };
+
   return (
     <div className="h-full flex items-center justify-center pt-32">
       <Card className="md:h-auto w-[80%] sm:w-[420px] p-4 sm:p-8">
         <CardHeader>
           <CardTitle className="text-center">Sign up</CardTitle>
-          <CardDescription className="text-sm text-center text-accent-foreground">
+          <CardDescription className="ext-sm text-center text-accent-foreground">
             Use email or service, to create account
           </CardDescription>
         </CardHeader>

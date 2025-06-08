@@ -5,9 +5,9 @@
 import { Button } from "@/components/ui/button";
 import {
   Card,
-  CardHeader,
-  CardDescription,
   CardContent,
+  CardDescription,
+  CardHeader,
   CardTitle,
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -18,13 +18,11 @@ import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
 
 //react icons
-import { FaGithub } from "react-icons/fa";
-import { FcGoogle } from "react-icons/fc";
-import { useState } from "react";
+import { TriangleAlert } from "lucide-react";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 import { toast } from "sonner";
-import { TriangleAlert } from "lucide-react";
 
 
 
@@ -54,13 +52,7 @@ const SignIn = () => {
     }
   };
 
-  const handleProvider = (
-    event: React.MouseEvent<HTMLButtonElement>,
-    value: "github" | "google"
-  ) => {
-    event.preventDefault();
-    signIn(value, { callbackUrl: "/" });
-  };
+
   return (
     <div className="h-full flex items-center justify-center pt-38">
       <Card className="md:h-auto w-[80%] sm:w-[420px] p-4 sm:p-8">

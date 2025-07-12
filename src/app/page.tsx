@@ -7,7 +7,8 @@ import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
 import { Footer } from "@/components/Footer";
 import { Chooseus } from "@/components/Chooseus";
 import { Card, CardContent } from "@/components/ui/card";
-import { SessionProvider } from "next-auth/react"
+import { SessionProvider } from "next-auth/react";
+import { ParticlesBackground } from "@/components/ParticlesBackground";
 import PageComponent from "@/components/PageComponent";
 
 
@@ -74,7 +75,8 @@ const services = [
 export default function Home() {
 
   return (
-    <main>
+    <main className="relative z-0">
+      <ParticlesBackground />
       {/* HERO SECTION */}
       <section className="min-h-screen text-white flex items-center px-8 py-8 gap-10">
         <div className="max-w-7xl w-full grid md:grid-cols-2 gap-8 ">

@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { services } from "@/data/services";
 import { Button } from "@/components/ui/button";
+import { ParticlesBackground } from "@/components/ParticlesBackground";
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -18,6 +19,8 @@ export default async function ServiceDetail(props: Props) {
     if (!service) return notFound();
 
     return (
+        <>
+        <ParticlesBackground />
         <div className="text-white pt-12">
             <h1 className="text-5xl font-bold p-5 mx-15 ">{service.title}</h1>
             <div className="flex flex-row p-10 pl-20 pr-10">
@@ -52,5 +55,6 @@ export default async function ServiceDetail(props: Props) {
                 </div>
             </div>
         </div>
+        </>
     );
 }

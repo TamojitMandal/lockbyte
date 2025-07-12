@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
+import { ParticlesBackground } from "@/components/ParticlesBackground";
 
 import Link from "next/link";
 
@@ -59,6 +60,8 @@ const SignUp = () => {
 
 
   return (
+    <>
+    <ParticlesBackground />
     <div className="h-full flex items-center justify-center pt-32">
       <Card className="md:h-auto w-[80%] sm:w-[420px] p-4 sm:p-8">
         <CardHeader>
@@ -128,6 +131,7 @@ const SignUp = () => {
         </CardContent>
       </Card>
     </div>
+    </>
   );
 };
 

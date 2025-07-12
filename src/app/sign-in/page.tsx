@@ -23,6 +23,7 @@ import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { toast } from "sonner";
+import { ParticlesBackground } from "@/components/ParticlesBackground";
 
 
 
@@ -54,6 +55,8 @@ const SignIn = () => {
 
 
   return (
+    <>
+    <ParticlesBackground />
     <div className="h-full flex items-center justify-center pt-38">
       <Card className="md:h-auto w-[80%] sm:w-[420px] p-4 sm:p-8">
         <CardHeader>
@@ -109,6 +112,7 @@ const SignIn = () => {
         </CardContent>
       </Card>
     </div>
+    </>
   );
 };
 

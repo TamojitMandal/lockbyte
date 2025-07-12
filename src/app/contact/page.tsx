@@ -10,6 +10,7 @@ import { AlertCircle, CheckCircle } from "lucide-react"
 import { useToast } from "@/hooks/use-toast"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXTwitter, faTelegramPlane, faDiscord } from "@fortawesome/free-brands-svg-icons";
+import { ParticlesBackground } from "@/components/ParticlesBackground";
 
 // Submit button with loading state
 function SubmitButton() {
@@ -65,6 +66,8 @@ export default function Contact() {
   }
 
   return (
+    <>
+    <ParticlesBackground />
     <div className="container px-4 py-8 mx-auto">
       <h1 className="text-6xl text-white font-bold pt-12 mb-8 mx-53">
         <span className="text-red-600">C</span>ONTACT US
@@ -197,5 +200,6 @@ export default function Contact() {
         </div>
       </div>
     </div>
+    </>
   )
 }

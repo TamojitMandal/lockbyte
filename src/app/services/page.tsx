@@ -1,6 +1,7 @@
 "use client";
 
 import { Card, CardContent } from "@/components/ui/card";
+import { ParticlesBackground } from "@/components/ParticlesBackground";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -33,6 +34,8 @@ const services = [
 
 export default function ServicesSection() {
     return (
+        <>
+        <ParticlesBackground />
         <section className="text-white py-16">
             <div className="container mx-auto px-4">
                 <h2 className="text-5xl font-bold mb-10 pt-10">
@@ -78,5 +81,6 @@ export default function ServicesSection() {
                 </div>
             </div>
         </section>
+        </>
     );
 }

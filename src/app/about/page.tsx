@@ -1,7 +1,11 @@
 import React from "react";
+import { ParticlesBackground } from "@/components/ParticlesBackground";
+
 
 export default function AboutUsSection() {
     return (
+        <> 
+        <ParticlesBackground />
         <section className="text-white py-20">
             <div className="container mx-auto px-4 sm:px-10">
                 <h1 className="text-6xl text-white font-bold pt-12 mb-8">
@@ -43,5 +47,6 @@ export default function AboutUsSection() {
                 </div>
             </div>
         </section>
+        </>
     );
 }
